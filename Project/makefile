@@ -42,4 +42,4 @@ clean:
 
 # Run the tests
 test:
-	python3 -m unittest discover
+	python3 test.py
