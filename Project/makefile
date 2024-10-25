@@ -1,6 +1,6 @@
 # Variables
-IMAGE_NAME=flask-api-app
-PORT=5000
+include .env
+export
 
 .PHONY: build run stop clean test help
 
@@ -13,6 +13,17 @@ help:
 	@echo "  make clean    - Remove stopped containers"
 	@echo "  make test     - Run the unit tests"
 
+# initialization:
+init:
+	@echo "initialization...";
+	@echo "Creation d'un environment virtuelle";\
+	python3 -m venv .venv;\
+	source .venv/bin/activate;\
+	@echo " installer les librairies";\
+	pip3 install -r requirements.txt
+
+test-env:
+	@echo "port = $(PORT)"
 # Build the Docker image
 build:
 	docker build -t $(IMAGE_NAME) .
@@ -31,4 +42,4 @@ clean:
 
 # Run the tests
 test:
-	python -m unittest discover
+	python3 test.py
