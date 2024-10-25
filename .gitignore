@@ -1,3 +1,4 @@
 *.csv
 /private
 /Project
+app.log
