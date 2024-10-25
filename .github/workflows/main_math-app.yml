@@ -69,14 +69,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D19538E91D684761943656081A49B475 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_926FF673B1C84B45831896014FD828AC }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8C11D0180E79415EA8748D2DDA6FBDF3 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_8B4FD42856CF4625ADDE74E7AB1DC9BB }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6611CD3C0778476180E346C6DB9FF661 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4F9EDACA8F65410597158EB76A1D09E2 }}
 
       # Step 4: Deploy to Azure Web App
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'math-app'  # Replace with your actual Azure Web App name
+          app-name: 'math-app-devops'  # Replace with your actual Azure Web App name
           slot-name: 'Production'
